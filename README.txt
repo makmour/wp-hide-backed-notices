@@ -1,5 +1,5 @@
 === Hide Dashboard Notifications ===
-Contributors: wprepublic, thewebcitizen, hk1993, bitofwp
+Contributors: wprepublic, thewebcitizen
 Tags: hide dashboard notifications, hide admin notifications, hide wordpress plugin update, hide nags, hide admin notices
 Requires at least: 3.0
 Tested up to: 6.7
