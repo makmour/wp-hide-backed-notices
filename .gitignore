@@ -1,0 +1,15 @@
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore SVN metadata (just in case)
+.svn/
+
+# Ignore standard WP directories if you drop this in a local install
+node_modules/
+vendor/
+assets/*.map
