@@ -22,16 +22,20 @@
  */
 class Wp_Hide_Backed_Notices_Activator {
 
-    /**
-     * Short Description. (use period)
-     *
-     * Long Description.
-     *
-     * @since    1.0.0
-     */
-    public static function activate() {
-        $manage_warnings_notice = 'a:1:{s:10:"Only_Admin";s:10:"Only Admin";}';
-        update_option('manage_warnings_notice', $manage_warnings_notice);
-    }
+	/**
+	 * Activate the plugin.
+	 * * Sets default options if they don't exist, ensuring a clean array structure.
+	 *
+	 * @since    1.0.0
+	 */
+	public static function activate() {
+		$default_settings = array(
+			'Hide_Notices' => 'Hide Notices',
+		);
+
+		if ( false == get_option( 'manage_warnings_notice' ) ) {
+			update_option( 'manage_warnings_notice', $default_settings );
+		}
+	}
 
 }
