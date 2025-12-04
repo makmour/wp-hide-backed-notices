@@ -3,7 +3,7 @@ Contributors: wprepublic, thewebcitizen
 Tags: hide dashboard notifications, hide admin notifications, hide wordpress plugin update, hide nags, hide admin notices
 Requires at least: 3.0
 Tested up to: 6.7
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 Donate link: 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
