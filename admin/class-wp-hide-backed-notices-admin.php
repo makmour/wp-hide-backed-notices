@@ -34,7 +34,10 @@ class Wp_Hide_Backed_Notices_Admin {
      * Settings Page Logic
      */
     public function warning_notices_settings() {
-        // Save Logic
+        // 1. Determine Active Tab (Fixes the bug where it always reverted to 'Settings')
+        $active_tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : 'settings';
+
+        // 2. Save Logic
         if (isset($_POST['save_notice_box']) && check_admin_referer('save_settings_nonce', 'save_settings_nonce_field')) {
             
             $input = isset($_POST['hide_notice']) ? $_POST['hide_notice'] : array();
@@ -51,7 +54,7 @@ class Wp_Hide_Backed_Notices_Admin {
             echo '<div class="updated"><p>Settings Saved.</p></div>';
         }
 
-        // Retrieve Options
+        // 3. Retrieve Options
         $posts_from_db = get_option($this->option_name, array());
         
         // MIGRATION FIX: If old data exists as a string (double serialized), fix it on the fly
@@ -59,26 +62,24 @@ class Wp_Hide_Backed_Notices_Admin {
             $posts_from_db = maybe_unserialize($posts_from_db);
         }
         
-        // Prepare variables for the view (keeping your existing HTML structure mostly intact)
-        // Note: For a pro version, we would separate this View into a separate file.
         ?>
         <div class="main-wrap setting-top-wrap">
             <div class="tab">
-                <button class="hide-tablinks-notices active" onclick="openSettings(event, 'Settings', 'settings')" id="defaultOpen">
+                <button class="hide-tablinks-notices <?php echo ($active_tab === 'settings') ? 'active' : ''; ?>" onclick="openSettings(event, 'Settings', 'settings')">
                     <img src="<?php echo plugin_dir_url(__FILE__) . 'images/hide-setting-white.png' ?>"> Settings
                 </button>
-                <button class="hide-tablinks-notices" onclick="openSettings(event, 'User-roles', 'roles')">
+                <button class="hide-tablinks-notices <?php echo ($active_tab === 'roles') ? 'active' : ''; ?>" onclick="openSettings(event, 'User-roles', 'roles')">
                     <img src="<?php echo plugin_dir_url(__FILE__) . 'images/hide-setting-white.png' ?>"> User roles
                 </button>
-                <button class="hide-tablinks-notices" onclick="openSettings(event, 'Notifications', 'notifications')">
+                <button class="hide-tablinks-notices <?php echo ($active_tab === 'notifications') ? 'active' : ''; ?>" onclick="openSettings(event, 'Notifications', 'notifications')">
                     <img src="<?php echo plugin_dir_url(__FILE__) . 'images/dash-hide-white.png' ?>"> Notifications
                 </button>
             </div>
 
-            <form method="POST">
+            <form method="POST" action="<?php echo esc_url(add_query_arg('tab', $active_tab)); ?>">
                 <?php wp_nonce_field('save_settings_nonce', 'save_settings_nonce_field'); ?>
                 
-                <div id="Settings" class="hide-tabcontent-notices" style="display: block;">
+                <div id="Settings" class="hide-tabcontent-notices" style="display: <?php echo ($active_tab === 'settings') ? 'block' : 'none'; ?>;">
                     <h3>Select what you want to hide</h3>
                     <div class="outer-gallery-box">
                         <div class="checkboxes-manage" style="margin-top: 10px;">
@@ -92,7 +93,7 @@ class Wp_Hide_Backed_Notices_Admin {
                     </div>
                 </div>
 
-                <div id="User-roles" class="hide-tabcontent-notices" style="display: none;">
+                <div id="User-roles" class="hide-tabcontent-notices" style="display: <?php echo ($active_tab === 'roles') ? 'block' : 'none'; ?>;">
                     <h3>Select user roles to hide notifications for.</h3>
                     <div class="outer-gallery-box">
                         <div class="checkboxes-manage" style="margin-top: 10px;">
@@ -113,7 +114,7 @@ class Wp_Hide_Backed_Notices_Admin {
                 </div>
             </form>
 
-            <div id="Notifications" class="hide-tabcontent-notices" style="display: none;">
+            <div id="Notifications" class="hide-tabcontent-notices" style="display: <?php echo ($active_tab === 'notifications') ? 'block' : 'none'; ?>;">
                 <h3>Dashboard notifications</h3>
                 <?php
                 if (isset($posts_from_db['Hide_Notices']) || in_array('Hide Notices', $posts_from_db)) {
