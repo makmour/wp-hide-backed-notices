@@ -13,6 +13,6 @@ jobs:
     - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@stable
       env:
-        # Χρησιμοποιούμε τα νέα ονόματα για να αποφύγουμε κολλήματα
+        # IMPORTANT: Linking the script to your new Secrets
         SVN_USERNAME: ${{ secrets.DEPLOY_USER }}
         SVN_PASSWORD: ${{ secrets.DEPLOY_PASS }}
