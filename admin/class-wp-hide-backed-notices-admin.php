@@ -145,6 +145,12 @@ class Wp_Hide_Backed_Notices_Admin {
 
     private function generate_hiding_css() {
         $user = wp_get_current_user();
+
+        // NEW: Check if the current user is excluded via filter
+        if ( apply_filters( 'whbn_exclude_user_from_hiding', false, $user->ID ) ) {
+            return '';
+        }
+
         $user_roles = (array) $user->roles;
         $options = get_option($this->option_name, array());
         if (is_string($options)) $options = maybe_unserialize($options);
