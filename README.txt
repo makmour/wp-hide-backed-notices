@@ -3,25 +3,18 @@ Contributors: wprepublic, thewebcitizen
 Tags: hide dashboard notifications, hide admin notifications, hide wordpress plugin update, hide nags, hide admin notices
 Requires at least: 3.0
 Tested up to: 6.7
-Stable tag: 1.4.5
+Stable tag: 1.4.6
 Donate link: 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Short Description ==
 
-Save your WordPress Dashboard from Notifications Bloat!
-Hide all those annoying and spammy notices from your WordPress Dashboard.
-You can also enable the option to store and view them all together under the Notifications Tab.
+Save your WordPress Dashboard from Notifications Bloat! Hide all those annoying and spammy notices from your WordPress Dashboard. You can also enable the option to store and view them all together under the Notifications Tab.
 
 == Description ==
 
-Warnings and notices can be helpful for developers as they notify them for debugging issues with their code.
-Though these notices can be sometimes informative, quite often they become frustrating, inconvenient and even spammy;
-especially since they are a way of promoting the additional services offered by some plugins.
-The end result is a bloated WordPress Dashboard where you have to spend a lot of time and energy to close all those nags in order to clear your WordPress website’s backend.
-Hide Dashboard Notifications allows you to easily turn off those nags and notifications & hide plugin updates.
-It also stores them under the Notifications Tab where you can review them later if you want to.
+Warnings and notices can be helpful for developers as they notify them for debugging issues with their code. Though these notices can be sometimes informative, quite often they become frustrating, inconvenient and even spammy; especially since they are a way of promoting the additional services offered by some plugins. The end result is a bloated WordPress Dashboard where you have to spend a lot of time and energy to close all those nags in order to clear your WordPress website’s backend. Hide Dashboard Notifications allows you to easily turn off those nags and notifications & hide plugin updates. It also stores them under the Notifications Tab where you can review them later if you want to.
 
 == Hide Dashboard Notifications Features ==
 
@@ -32,23 +25,7 @@ It also stores them under the Notifications Tab where you can review them later 
 
 == How it works: ==
 
-As is the case with most WordPress sites the number of plugins installed is often quite big and so is the number of notifications popping up on your WordPress Dashboard.
-We are sure you are familiar with the chaos these can create while you work.
-As we understand how difficult it is for you to focus on such clutter, we have created the Hide Dashboard Notifications Plugin.
-It takes care of all plugin notifications for you and allows you to manage them successfully by silencing them so that you work undisturbed within a clear WordPress Dashboard.
-Hide WordPress Dashboard Notifications is the easiest and most convenient way to deal with dashboard notifications.
-This way you can declutter your dashboard and stay focused on your work.
-All you need to do is install the Hide WordPress Dashboard Notifications plugin and choose the settings that suit your needs best.
-You can choose to hide the notifications coming from the installed plugins so that you get to focus on your work and get things done.
-You can even opt for hiding the WordPress update notices.
-As new releases of updates are rolled out frequently, you can choose to silence those notifications for a certain amount of time, or until you finish the issue you are working on.
-You also have the option of hiding the dashboard notices for only the Administrators of your website.
-The rest of the users of the WordPress website will still be able to receive the notices.
-These pop-ups and notices are not deleted. They are simply put on hold.
-Should you wish to go through them you will find them all perched under the notifications tab of the plugin.
-This way, you will be able to sort them out at your own convenience,  tackling them successfully.
-Want to get rid of the annoying notices which is displayed when a new plugin is installed?
-Then you're at the right place :) Install our Hide Backend Notifications plugin and all your problem will be solved.
+As is the case with most WordPress sites the number of plugins installed is often quite big and so is the number of notifications popping up on your WordPress Dashboard. We are sure you are familiar with the chaos these can create while you work. As we understand how difficult it is for you to focus on such clutter, we have created the Hide Dashboard Notifications Plugin. It takes care of all plugin notifications for you and allows you to manage them successfully by silencing them so that you work undisturbed within a clear WordPress Dashboard. Hide WordPress Dashboard Notifications is the easiest and most convenient way to deal with dashboard notifications. This way you can declutter your dashboard and stay focused on your work. All you need to do is install the Hide WordPress Dashboard Notifications plugin and choose the settings that suit your needs best. You can choose to hide the notifications coming from the installed plugins so that you get to focus on your work and get things done. You can even opt for hiding the WordPress update notices. As new releases of updates are rolled out frequently, you can choose to silence those notifications for a certain amount of time, or until you finish the issue you are working on. You also have the option of hiding the dashboard notices for only the Administrators of your website. The rest of the users of the WordPress website will still be able to receive the notices. These pop-ups and notices are not deleted. They are simply put on hold. Should you wish to go through them you will find them all perched under the notifications tab of the plugin. This way, you will be able to sort them out at your own convenience,  tackling them successfully. Want to get rid of the annoying notices which is displayed when a new plugin is installed? Then you're at the right place :) Install our Hide Backend Notifications plugin and all your problem will be solved.
 
 == Installation ==
 
@@ -75,6 +52,7 @@ OR
 Hide Dashboard Notifications doesn't deal at the moment with any data related to the GDPR so its compliant by default.
 
 = Do you provide a paid version of Hide Dashboard Notifications?
+
 Nope, though we may consider adding a premium version if needed.
 
 = How to contact your support team if i need assistance?
@@ -83,10 +61,15 @@ You can find us under our WordPress Support Page.
 
 == Reviews ==
 
-If you have installed the Hide WordPress DashBoard Notifications plugin then go ahead and leave a [review](https://wordpress.org/support/plugin/wp-hide-backed-notices/reviews/).
-We would be happy to receive your feedback and we will take it seriously into consideration.
+If you have installed the Hide WordPress DashBoard Notifications plugin then go ahead and leave a [review](https://wordpress.org/support/plugin/wp-hide-backed-notices/reviews/). We would be happy to receive your feedback and we will take it seriously into consideration.
 
 == Changelog ==
+
+= 1.4.6 =
+* NEW: Added `whbn_exclude_user_from_hiding` filter to allow excluding specific user IDs from the notification hiding rules.
+
+= 1.4.5 =
+* Maintenance release and version bump.
 
 = 1.4.1 =
 * FIX: Removed accidental character output in uninstall script causing deletion errors.
@@ -104,7 +87,6 @@ We would be happy to receive your feedback and we will take it seriously into co
 * Confirmed compatibility with WordPress 6.5.3 and PHP 8.2
 * Minor metadata updates
 
-
 = 1.3.5 (7 July 2024) =
 * Bugfix regarding non admin user roles not being able to login to the WP Dashboard(updated).
 
@@ -118,8 +100,7 @@ We would be happy to receive your feedback and we will take it seriously into co
 * Version Rollback for fixing the Dashboard login issue
 
 = 1.3.1 (19 June 2024) =
-* Security Fix by adding capability checks.
-Kudos to [Francesco Carlucci](https://profiles.wordpress.org/francescocarlucci/)
+* Security Fix by adding capability checks. Kudos to [Francesco Carlucci](https://profiles.wordpress.org/francescocarlucci/)
 * Added missing admin icons(D'oh!)
 
 = 1.3 (19 February 2024) =
@@ -134,12 +115,6 @@ Kudos to [Francesco Carlucci](https://profiles.wordpress.org/francescocarlucci/)
 
 = 1.2.1 (21 July 2022) =
 * Bug Fix
-
-= 1.2 (22 November 2020) =
-* Bug Fix with other plugins compatibility.
-* NEW: Hide the WordPress PHP Update Required Notice.
-* NEW: Hiding notices individually by admin.
-* NEW: Added the "Notifications" option on the WordPress Dashboard Top Toolbar for easier acces.
 
 = 1.2 (22 November 2020) =
 * Bug Fix with other plugins compatibility.
