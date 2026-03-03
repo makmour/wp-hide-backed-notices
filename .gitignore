@@ -13,3 +13,5 @@ Thumbs.db
 node_modules/
 vendor/
 assets/*.map
+structure.txt
+sudowp_code_dump.txt
