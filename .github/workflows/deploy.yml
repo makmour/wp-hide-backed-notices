@@ -1,7 +1,8 @@
 name: Deploy to WordPress.org
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "*"
 
 jobs:
   tag:
@@ -17,3 +18,5 @@ jobs:
         SVN_USERNAME: wprepublic
         # password using secrets
         SVN_PASSWORD: ${{ secrets.DEPLOY_PASS }}
+        # Explicity declare the WP.org slug for safety
+        SLUG: wp-hide-backed-notices
