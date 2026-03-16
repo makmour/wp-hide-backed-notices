@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Hide Dashboard Notifications
- * Plugin URI:        wprepublic.com
+ * Plugin URI:        https://wprepublic.com/
  * Description:       Hide all those annoying and spammy notices from your WordPress Dashboard. You can also enable the option to store and view them under the Notifications Tab. 
  * Version:           1.4.6
  * Author:            WP Republic

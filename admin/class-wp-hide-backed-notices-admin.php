@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -17,11 +18,6 @@ class Wp_Hide_Backed_Notices_Admin {
         $this->version = $version;
 
         add_action('admin_menu', array($this, 'add_custom_menu_in_dashboard'));
-        add_shortcode('warning_notices_settings', array($this, 'warning_notices_settings'));
-
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_styles'));
-        add_action('login_enqueue_scripts', array($this, 'enqueue_styles'));
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
     }
 
     public function add_custom_menu_in_dashboard() {
@@ -37,6 +33,7 @@ class Wp_Hide_Backed_Notices_Admin {
     }
 
     public function warning_notices_settings() {
+        if ( ! current_user_can( 'manage_options' ) ) { return; }
         $active_tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : 'settings';
 
         if (isset($_POST['save_notice_box']) && check_admin_referer('save_settings_nonce', 'save_settings_nonce_field')) {
