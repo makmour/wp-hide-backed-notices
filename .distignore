@@ -1,0 +1,7 @@
+# Development files — excluded from WP.org SVN deploy
+CLAUDE.md
+HANDOFF.md
+.github
+.gitignore
+*.md
+!README.md

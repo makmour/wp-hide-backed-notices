@@ -1,0 +1,26 @@
+# Sensitive
+GitHub-tokens.txt
+
+# Environment and Logs
+.venv/
+__pycache__/
+*.log
+*.sqlite
+*.csv
+*.jsonl
+
+# System
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Development context
+CLAUDE.md
+HANDOFF.md
+*.handoff.md
+*.no
+output.txt
