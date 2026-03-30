@@ -3,7 +3,7 @@ Contributors: wprepublic, thewebcitizen
 Tags: hide dashboard notifications, hide admin notifications, hide wordpress plugin update, hide nags, hide admin notices
 Requires at least: 3.0
 Tested up to: 6.7
-Stable tag: 1.4.8
+Stable tag: 1.4.9
 Donate link: 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -64,6 +64,9 @@ You can find us under our WordPress Support Page.
 If you have installed the Hide WordPress DashBoard Notifications plugin then go ahead and leave a [review](https://wordpress.org/support/plugin/wp-hide-backed-notices/reviews/). We would be happy to receive your feedback and we will take it seriously into consideration.
 
 == Changelog ==
+
+= 1.4.9 =
+* Maintenance: Repository cleanup and version sync.
 
 = 1.4.8 =
 * Fix: Fatal TypeError on fresh activation when get_option() returns a non-array value.
