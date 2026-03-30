@@ -1,8 +1,5 @@
 name: Deploy to WordPress.org
 on:
-  push:
-    tags:
-      - "*"
   workflow_dispatch:
 
 jobs:
@@ -15,9 +12,6 @@ jobs:
     - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@stable
       env:
-        # set the username hardcoded
         SVN_USERNAME: wprepublic
-        # password using secrets
         SVN_PASSWORD: ${{ secrets.DEPLOY_PASS }}
-        # Explicity declare the WP.org slug for safety
         SLUG: wp-hide-backed-notices
